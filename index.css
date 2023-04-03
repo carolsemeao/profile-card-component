@@ -1,0 +1,201 @@
+:root {
+    /* Colors */
+    --clr-dark: 229, 23%, 23%;
+    --clr-cyan: 185, 75%, 39%;
+    --clr-gray-blue: 227, 10%, 46%;
+    --clr-dark-grey: 0, 0%, 59%;
+    --clr-white: 0, 0%, 100%;
+    --clr-gray: 228, 9%, 92%;
+
+    /* Typography */
+    --ff-main: 'Kumbh Sans', sans-serif;
+
+    --fs-400: 1.125rem;
+    --fs-300: 0.875rem;
+    --fs-200: 0.625rem;
+
+    --fw-regular: 400;
+    --fw-bold: 700;
+
+    --letter-spacing: 1.5px;
+}
+
+/* Dektop media query */
+@media (min-width: 45em) {
+
+}
+
+/* ------------------------ */
+/* CSS RESET                */
+/* ------------------------ */
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-weight: 400;
+}
+
+/* set up the body */
+body {
+    font-family: var(--ff-main);
+    font-size: var(--fs-400);
+    background-color: hsl(var(--clr-cyan));
+    color: hsl(var(--clr-gray-blue));
+    min-height: 100vh;
+    align-items: center;
+    font-weight: var(--fw-regular);
+    padding-inline: 1.25rem;
+    overflow-x: hidden;
+    background-image: url('images/bg-pattern-top.svg'), url('images/bg-pattern-bottom.svg');
+    background-repeat: no-repeat;
+    background-position: 120% 270%, -25% -130%;
+}
+
+/* make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+}
+
+/* make forms easier to work with */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* remove animations for people who turned them off */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* ------------------------ */
+/* UTILITY CLASSES          */
+/* ------------------------ */
+.flex {
+    display: flex;
+    gap: var(--gap, 1rem);
+}
+
+.d-block {
+    display: block;
+}
+
+.skip-to-content {
+    position: absolute;
+    z-index: 20;
+    background-color: hsl(var(--clr-white));
+    color: hsl(var(--clr-dark));
+    padding: .5em 1em;
+    margin-inline: auto;
+    transform: translateY(-100%);
+    transition: transform 250ms ease-in;
+}
+
+.skip-to-content:focus {
+    transform: translateY(0);
+}
+
+/* colors */
+.txt-dark { color: hsl(var(--clr-dark)); }
+.txt-light { color: hsl(var(--clr-gray-blue)); }
+
+.bg-cyan { background-color: hsl(var(--clr-cyan)); }
+.bg-white { background-color: hsl(var(--clr-white)); }
+
+/* typography */
+.fs-400 { font-size: var(--fs-400); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-200 { font-size: var(--fs-200); }
+
+.fw-400 { font-weight: var(--fw-regular); }
+.fw-700 { font-weight: var(--fw-bold); }
+
+.letter-spacing { letter-spacing: var(--letter-spacing); }
+
+.card-container {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+    z-index: 0;
+}
+
+.card {
+    flex-direction: column;
+    width: 100%;
+    border-radius: 0.9375rem;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card--header {
+    width: 100%;
+    height: 140px;
+    background-image: url('images/bg-pattern-card.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card--profile-pic {
+    justify-content: center;
+    margin-top: -4rem;
+
+}
+
+.card--profile-pic img {
+    width: 96px;
+    border-radius: 50%;
+    border: 5px solid hsl(var(--clr-white));
+}
+
+.card--information h1 {
+    margin-bottom: 0.625rem;
+}
+
+.card--information h1 > span {
+    margin-left: 0.5625rem;
+}
+
+.card--metadata {
+    padding: 1.5rem;
+    border-top: 1px solid hsl(var(--clr-gray));
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.card--metadata div > h2 {
+    margin-bottom: 0.5625rem;
+}
