@@ -65,6 +65,9 @@ body {
     font-size: var(--fs-400);
     font-weight: var(--fw-regular);
     color: hsl(var(--clr-gray-blue));
+    background: url('images/bg-pattern-top.svg'), url('images/bg-pattern-bottom.svg');
+    background-position: right 52vw bottom 35vh, left 48vw top 52vh;
+    background-repeat: no-repeat, no-repeat;
     background-color: hsl(var(--clr-cyan));
     overflow: hidden;
 }
@@ -130,24 +133,6 @@ select {
 /* COMPONENTS               */
 /* ------------------------ */
 
-.img-top, .img-bottom {
-    position: absolute;
-    z-index: -1;
-}
-
-.img-top {
-    left: 0;
-    top: 0;
-    transform: translate(-50%, -45%);
-}
-
-.img-bottom {
-    bottom: 0;
-    right: 0;
-    transform: translate(50%, 45%);
-}
-
-/* card */
 .card-container {
     justify-content: center;
     align-items: center;

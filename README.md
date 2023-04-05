@@ -54,3 +54,5 @@ This is a solution to the [Profile card component challenge on Frontend Mentor](
 ## Acknowledgments
 
 Give this challenge a try. It's very beginner friendly and you can learn how to use CSS Flexbox by doing this
+
+- [Abdul Khalid](https://www.frontendmentor.io/profile/0xAbdulKhalid) - Thank you very much for the advice for placing the background images in a way better way
