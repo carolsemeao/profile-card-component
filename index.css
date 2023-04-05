@@ -20,10 +20,6 @@
     --letter-spacing: 1.5px;
 }
 
-/* Dektop media query */
-@media (min-width: 45em) {
-
-}
 
 /* ------------------------ */
 /* CSS RESET                */
@@ -60,18 +56,17 @@ p {
 
 /* set up the body */
 body {
+    position: relative;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 1.25rem;
     font-family: var(--ff-main);
     font-size: var(--fs-400);
-    background-color: hsl(var(--clr-cyan));
-    color: hsl(var(--clr-gray-blue));
-    min-height: 100vh;
-    align-items: center;
     font-weight: var(--fw-regular);
-    padding-inline: 1.25rem;
-    overflow-x: hidden;
-    background-image: url('images/bg-pattern-top.svg'), url('images/bg-pattern-bottom.svg');
-    background-repeat: no-repeat;
-    background-position: 120% 270%, -25% -130%;
+    color: hsl(var(--clr-gray-blue));
+    background-color: hsl(var(--clr-cyan));
+    overflow: hidden;
 }
 
 /* make images easier to work with */
@@ -113,21 +108,6 @@ select {
     display: block;
 }
 
-.skip-to-content {
-    position: absolute;
-    z-index: 20;
-    background-color: hsl(var(--clr-white));
-    color: hsl(var(--clr-dark));
-    padding: .5em 1em;
-    margin-inline: auto;
-    transform: translateY(-100%);
-    transition: transform 250ms ease-in;
-}
-
-.skip-to-content:focus {
-    transform: translateY(0);
-}
-
 /* colors */
 .txt-dark { color: hsl(var(--clr-dark)); }
 .txt-light { color: hsl(var(--clr-gray-blue)); }
@@ -145,17 +125,39 @@ select {
 
 .letter-spacing { letter-spacing: var(--letter-spacing); }
 
+
+/* ------------------------ */
+/* COMPONENTS               */
+/* ------------------------ */
+
+.img-top, .img-bottom {
+    position: absolute;
+    z-index: -1;
+}
+
+.img-top {
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -45%);
+}
+
+.img-bottom {
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 45%);
+}
+
+/* card */
 .card-container {
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-height: 100%;
-    z-index: 0;
+    min-height: 100vh;
 }
 
 .card {
     flex-direction: column;
-    width: 100%;
+    width: 326px;
     border-radius: 0.9375rem;
     overflow: hidden;
     text-align: center;
@@ -198,4 +200,12 @@ select {
 
 .card--metadata div > h2 {
     margin-bottom: 0.5625rem;
+}
+
+
+@media (min-width: 45em) {
+    .card {
+        --gap: 1.5rem;
+        width: 350px;
+    }
 }
